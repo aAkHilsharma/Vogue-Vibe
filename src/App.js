@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './routes/navigation/navigation.component.jsx';
 import Authentication from './routes/authentication/authentication.component.jsx';
 import Shop from './routes/shop/shop.component.jsx';
+import CheckOut from './routes/checkout/checkout.component.jsx';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Route path='shop' element={<Shop />} />
         <Route path='sign-in' element={<Authentication />} />
         <Route path='shop' element={<Shop />} />
+        <Route path='checkout' element={<CheckOut />} />
       </Route>
     </Routes>
   );
