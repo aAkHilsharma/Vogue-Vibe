@@ -5,8 +5,12 @@ import {
 } from '../../utils/firbase.utils';
 
 import FormInput from '../form-input/form-input.component';
-import './sign-in-form.styles.scss';
-import Button from '../button/button.component';
+import {
+  SignInContainer,
+  TitleContainer,
+  ButtonContainer,
+} from './sign-in-form.styles.jsx';
+import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
 
 const defaultFormFields = {
   email: '',
@@ -50,8 +54,8 @@ const SignInForm = () => {
   };
 
   return (
-    <div className='sign-in-container'>
-      <h2>Already have an account?</h2>
+    <SignInContainer>
+      <TitleContainer>Already have an account?</TitleContainer>
       <span>Sign In with email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
@@ -70,14 +74,18 @@ const SignInForm = () => {
           required
           onChange={handleChange}
         />
-        <div className='buttons-container'>
+        <ButtonContainer>
           <Button type='submit'>Sign In</Button>
-          <Button type='button' buttonType='google' onClick={signInWithGoogle}>
+          <Button
+            type='button'
+            buttonType={BUTTON_TYPE_CLASSES.google}
+            onClick={signInWithGoogle}
+          >
             Google
           </Button>
-        </div>
+        </ButtonContainer>
       </form>
-    </div>
+    </SignInContainer>
   );
 };
 
